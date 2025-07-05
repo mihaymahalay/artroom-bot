@@ -49,4 +49,5 @@ def send_message(recipient_id, text):
         print(f"Failed to send message: {response.text}")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))  # Используем PORT от Railway или 5000 по умолчанию
+    app.run(host="0.0.0.0", port=port, debug=True)
